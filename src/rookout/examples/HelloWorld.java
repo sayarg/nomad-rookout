@@ -9,7 +9,7 @@ public class HelloWorld {
         
         while(b) {
             foo(++count);
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         }
     }  
     
@@ -22,6 +22,6 @@ public class HelloWorld {
         int i = new Random().nextInt();
         
         System.out.println(new java.util.Date() + " - i = " + i);
-        System.out.println(new java.util.Date() + " - " + count + " sleeping for 1 sec....");
+        System.out.println(new java.util.Date() + " - " + count + " sleeping for 5 sec....");
     }
 }  
