@@ -15,7 +15,7 @@ public class HelloWorld {
     
     public static void foo(int count) {
         int a = 3;
-        float b = a / 2.3;
+        double b = a / 2.3;
 
         String foo = "bar";
 
