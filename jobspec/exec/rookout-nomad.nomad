@@ -12,11 +12,16 @@ job "rookout-java" {
   datacenters = ["dc1"]
   type = "service"
   group "java" {
-    task "exec" {
+    task "build-package" {
+      lifecycle {
+        hook = "prestart"
+        sidecar = false
+      }
+
       driver = "exec"
       config {
-        command = "java"
-        args    = ["-cp", "local/examples/*", "rookout.examples.HelloWorld"]
+        command = "javac"
+        args    = ["-g", "local/examples/HelloWorld.java"]
       }
       artifact {
         source      = "https://repository.sonatype.org/service/local/repositories/central-proxy/content/com/rookout/rook/${var.rookout-version}/rook-${var.rookout-version}.jar"
@@ -29,8 +34,15 @@ job "rookout-java" {
         destination = "local/examples"
         options {}
       }
+    }
+    task "java-run" {
+      driver = "java"
+      config {
+        jar_path    = "local/HelloWorld.jar"
+        class_path  = "rookout.examples.HelloWorld"
+        jvm_options = ["-Xmx2048m", "-Xms256m", "-javaagent:local/rook.jar","-DROOKOUT_TOKEN=${var.rookout-token}"]
+      }
       env {
-        JAVA_TOOL_OPTIONS="-javaagent:local/rook.jar -DROOKOUT_TOKEN=${var.rookout-token}"
         ROOKOUT_LABELS="env:dev"
       }
     }

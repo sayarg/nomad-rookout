@@ -8,7 +8,7 @@ CONSUL_VERSION=1.9.1
 CNI_VERSION=v0.9.0
 
 # Installing packages
-sudo apt install openjdk-11-jre-headless
+sudo apt install openjdk-11-jre-headless openjdk-11-jdk-headless
 
 echo "Installing Docker..."
 sudo apt-get update
