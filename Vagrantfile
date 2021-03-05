@@ -6,6 +6,10 @@ $script = <<SCRIPT
 NOMAD_VERSION=1.0.4
 CONSUL_VERSION=1.9.1
 CNI_VERSION=v0.9.0
+
+# Installing packages
+sudo apt install openjdk-11-jre-headless
+
 echo "Installing Docker..."
 sudo apt-get update
 sudo apt-get remove docker docker-engine docker.io
