@@ -10,5 +10,7 @@ export JAVA_TOOL_OPTIONS="-javaagent:`pwd`/rook-0.1.160.jar -DROOKOUT_TOKEN=e1ec
 # Optional, see Labels section below Projects
 #export ROOKOUT_LABELS=env:dev
 
+java -version
+
 java -cp hello-world.jar rookout.examples.HelloWorld
 
