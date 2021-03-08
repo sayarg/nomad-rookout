@@ -3,13 +3,19 @@ package rootkout.examples;
 import java.util.Random;
 
 public class HelloWorld {  
-    public static void main(String args[]) throws Exception {
+
+    public static void main(String args[])  {
         int count = 0;
         boolean b = true;
         
         while(b) {
             foo(++count);
-            Thread.sleep(5000);
+            try {
+                Thread.sleep(5000);    
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            
         }
     }  
     
