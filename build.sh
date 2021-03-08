@@ -8,7 +8,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Hom
 rm -rf classes
 mkdir -p classes
 
-javac src/rookout/examples/HelloWorld.java -d classes
+javac -g src/rookout/examples/HelloWorld.java -d classes
 
 jar cvf hello-world.jar -C classes .
 
