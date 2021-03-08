@@ -1,4 +1,4 @@
-package rootkout.examples;
+package rookout.examples;
 
 import java.util.Random;
 
