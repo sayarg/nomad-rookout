@@ -20,10 +20,10 @@ The documentation can be found here <https://www.nomadproject.io/docs>
 
 This environment uses vagrant / virtualbox to deploy an **All In One** Nomad cluster locally.
 
-Install the Nomad cli <https://www.nomadproject.io/docs/install>
-Install virtualbox for your system. <https://www.virtualbox.org/wiki/Downloads>
-Install vagrant for your system. <https://www.vagrantup.com/docs/installation>
-Install git for your system. <https://github.com/git-guides/install-git>
+* Install the Nomad cli <https://www.nomadproject.io/docs/install>
+* Install virtualbox for your system. <https://www.virtualbox.org/wiki/Downloads>
+* Install vagrant for your system. <https://www.vagrantup.com/docs/installation>
+* Install git for your system. <https://github.com/git-guides/install-git>
 
 Open a terminal and follow below to spin up the vagrant server.
 
