@@ -203,6 +203,8 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 4646, host: 4646, auto_correct: true
   config.vm.network "private_network", ip: "192.168.50.4"
 
+  config.vm.synced_folder '/Users/guy/dev/rookout/rookout-nomad-driver', '/opt/nomad/serverdata/plugins'
+
 
   # Increase memory for Virtualbox
   config.vm.provider "virtualbox" do |vb|
