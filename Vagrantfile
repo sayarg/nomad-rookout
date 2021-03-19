@@ -72,6 +72,11 @@ client {
   }
   cni_path = "/opt/cni/bin"
   cni_config_dir = "/opt/cni/config"
+  
+  host_volume "rookout_vol" {
+    path = "/opt/nomad/rookout"
+    read_only = false
+  }
 }
 
 
@@ -203,8 +208,11 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 4646, host: 4646, auto_correct: true
   config.vm.network "private_network", ip: "192.168.50.4"
 
+  # Point to the plugin directory (under data), so that we do not need to configure the client
   config.vm.synced_folder '/Users/guy/dev/rookout/rookout-nomad-driver', '/opt/nomad/serverdata/plugins'
 
+  # My local rookout jar deployment, which is later mounted in the nomad client
+  config.vm.synced_folder '/Users/guy/dev/rookout/nomad-rookout', '/opt/nomad/rookout'
 
   # Increase memory for Virtualbox
   config.vm.provider "virtualbox" do |vb|
